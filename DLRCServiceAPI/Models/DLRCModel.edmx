@@ -1,0 +1,279 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="DLRCDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Tbl_DL_Endorsement">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="Dl_Number" Type="nvarchar" MaxLength="50" />
+          <Property Name="Endorsement_Number" Type="nvarchar" MaxLength="50" />
+          <Property Name="Endorsemeent_Date" Type="nvarchar" MaxLength="50" />
+          <Property Name="Authority_id" Type="nvarchar" MaxLength="50" />
+          <Property Name="Rules" Type="nvarchar" MaxLength="50" />
+          <Property Name="Location" Type="nvarchar" MaxLength="50" />
+          <Property Name="Terminal_id" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Tbl_Dl_Review">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="DL_Number" Type="nvarchar" MaxLength="50" />
+          <Property Name="Fine" Type="nvarchar" MaxLength="50" />
+          <Property Name="Review_Date" Type="nvarchar" MaxLength="50" />
+          <Property Name="Authority_id" Type="nvarchar" MaxLength="50" />
+          <Property Name="Disqualification_Period_from" Type="nvarchar" MaxLength="50" />
+          <Property Name="Disqualification_Period_to" Type="nvarchar" MaxLength="50" />
+          <Property Name="Rules" Type="nvarchar" MaxLength="50" />
+          <Property Name="BackEnd_Update_Flag" Type="nvarchar" MaxLength="50" />
+          <Property Name="Location" Type="nvarchar" MaxLength="50" />
+          <Property Name="Terminal_id" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Tbl_Ocr">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Vehicle_Number" Type="nvarchar" MaxLength="50" />
+          <Property Name="Photo" Type="nvarchar(max)" />
+          <Property Name="RegDate" Type="nvarchar" MaxLength="50" />
+          <Property Name="Cof_id" Type="nvarchar" MaxLength="50" />
+          <Property Name="Location" Type="nvarchar" MaxLength="50" />
+          <Property Name="Terminal_id" Type="nvarchar" MaxLength="50" />
+          <Property Name="Rules" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Tbl_RC_Endorsement">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="Vehicle_Registration_Number" Type="nvarchar" MaxLength="50" />
+          <Property Name="Accused" Type="nvarchar" MaxLength="50" />
+          <Property Name="Rules" Type="nvarchar" MaxLength="50" />
+          <Property Name="Officer_id" Type="nvarchar" MaxLength="50" />
+          <Property Name="Location" Type="nvarchar" MaxLength="50" />
+          <Property Name="Date_Endorsement" Type="nvarchar" MaxLength="50" />
+          <Property Name="Time_Endorsement" Type="nvarchar" MaxLength="50" />
+          <Property Name="Terminal_id" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Tbl_RC_Review">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="Vehicle_Registration_Number" Type="nvarchar" MaxLength="50" />
+          <Property Name="Penalty" Type="nvarchar" MaxLength="50" />
+          <Property Name="Review_Date" Type="nvarchar" MaxLength="50" />
+          <Property Name="Officer_id" Type="nvarchar" MaxLength="50" />
+          <Property Name="Receipt_Number" Type="nvarchar" MaxLength="50" />
+          <Property Name="Backend_Update_Flag" Type="nvarchar" MaxLength="50" />
+          <Property Name="Terminal_Id" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityContainer Name="DLRCDBModelStoreContainer">
+          <EntitySet Name="Tbl_DL_Endorsement" EntityType="Self.Tbl_DL_Endorsement" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Tbl_Dl_Review" EntityType="Self.Tbl_Dl_Review" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Tbl_Ocr" EntityType="Self.Tbl_Ocr" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Tbl_RC_Endorsement" EntityType="Self.Tbl_RC_Endorsement" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Tbl_RC_Review" EntityType="Self.Tbl_RC_Review" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="DLRCDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Tbl_Dl_Review">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="DL_Number" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Fine" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Review_Date" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Authority_id" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Disqualification_Period_from" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Disqualification_Period_to" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Rules" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="BackEnd_Update_Flag" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Location" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Terminal_id" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Tbl_Ocr">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Vehicle_Number" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Photo" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="RegDate" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Cof_id" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Location" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Terminal_id" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Rules" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityContainer Name="DLRCDBEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Tbl_Dl_Review" EntityType="Self.Tbl_Dl_Review" />
+          <EntitySet Name="Tbl_Ocr" EntityType="Self.Tbl_Ocr" />
+          <EntitySet Name="Tbl_RC_Endorsement" EntityType="DLRCDBModel.Tbl_RC_Endorsement" />
+          <EntitySet Name="Tbl_RC_Review" EntityType="DLRCDBModel.Tbl_RC_Review" />
+          <EntitySet Name="Tbl_DL_Endorsement" EntityType="DLRCDBModel.Tbl_DL_Endorsement" />
+        </EntityContainer>
+        <EntityType Name="Tbl_RC_Endorsement">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Vehicle_Registration_Number" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Accused" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Rules" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Officer_id" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Location" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Date_Endorsement" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Time_Endorsement" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Terminal_id" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Tbl_RC_Review">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Vehicle_Registration_Number" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Penalty" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Review_Date" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Officer_id" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Receipt_Number" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Backend_Update_Flag" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Terminal_Id" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Tbl_DL_Endorsement">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Dl_Number" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Endorsement_Number" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Endorsemeent_Date" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Authority_id" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Rules" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Location" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Terminal_id" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="DLRCDBModelStoreContainer" CdmEntityContainer="DLRCDBEntities">
+          <EntitySetMapping Name="Tbl_Dl_Review">
+            <EntityTypeMapping TypeName="DLRCDBModel.Tbl_Dl_Review">
+              <MappingFragment StoreEntitySet="Tbl_Dl_Review">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="DL_Number" ColumnName="DL_Number" />
+                <ScalarProperty Name="Fine" ColumnName="Fine" />
+                <ScalarProperty Name="Review_Date" ColumnName="Review_Date" />
+                <ScalarProperty Name="Authority_id" ColumnName="Authority_id" />
+                <ScalarProperty Name="Disqualification_Period_from" ColumnName="Disqualification_Period_from" />
+                <ScalarProperty Name="Disqualification_Period_to" ColumnName="Disqualification_Period_to" />
+                <ScalarProperty Name="Rules" ColumnName="Rules" />
+                <ScalarProperty Name="BackEnd_Update_Flag" ColumnName="BackEnd_Update_Flag" />
+                <ScalarProperty Name="Location" ColumnName="Location" />
+                <ScalarProperty Name="Terminal_id" ColumnName="Terminal_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tbl_Ocr">
+            <EntityTypeMapping TypeName="DLRCDBModel.Tbl_Ocr">
+              <MappingFragment StoreEntitySet="Tbl_Ocr">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Vehicle_Number" ColumnName="Vehicle_Number" />
+                <ScalarProperty Name="Photo" ColumnName="Photo" />
+                <ScalarProperty Name="RegDate" ColumnName="RegDate" />
+                <ScalarProperty Name="Cof_id" ColumnName="Cof_id" />
+                <ScalarProperty Name="Location" ColumnName="Location" />
+                <ScalarProperty Name="Terminal_id" ColumnName="Terminal_id" />
+                <ScalarProperty Name="Rules" ColumnName="Rules" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tbl_RC_Endorsement">
+            <EntityTypeMapping TypeName="DLRCDBModel.Tbl_RC_Endorsement">
+              <MappingFragment StoreEntitySet="Tbl_RC_Endorsement">
+                <ScalarProperty Name="Terminal_id" ColumnName="Terminal_id" />
+                <ScalarProperty Name="Time_Endorsement" ColumnName="Time_Endorsement" />
+                <ScalarProperty Name="Date_Endorsement" ColumnName="Date_Endorsement" />
+                <ScalarProperty Name="Location" ColumnName="Location" />
+                <ScalarProperty Name="Officer_id" ColumnName="Officer_id" />
+                <ScalarProperty Name="Rules" ColumnName="Rules" />
+                <ScalarProperty Name="Accused" ColumnName="Accused" />
+                <ScalarProperty Name="Vehicle_Registration_Number" ColumnName="Vehicle_Registration_Number" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tbl_RC_Review">
+            <EntityTypeMapping TypeName="DLRCDBModel.Tbl_RC_Review">
+              <MappingFragment StoreEntitySet="Tbl_RC_Review">
+                <ScalarProperty Name="Terminal_Id" ColumnName="Terminal_Id" />
+                <ScalarProperty Name="Backend_Update_Flag" ColumnName="Backend_Update_Flag" />
+                <ScalarProperty Name="Receipt_Number" ColumnName="Receipt_Number" />
+                <ScalarProperty Name="Officer_id" ColumnName="Officer_id" />
+                <ScalarProperty Name="Review_Date" ColumnName="Review_Date" />
+                <ScalarProperty Name="Penalty" ColumnName="Penalty" />
+                <ScalarProperty Name="Vehicle_Registration_Number" ColumnName="Vehicle_Registration_Number" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tbl_DL_Endorsement">
+            <EntityTypeMapping TypeName="DLRCDBModel.Tbl_DL_Endorsement">
+              <MappingFragment StoreEntitySet="Tbl_DL_Endorsement">
+                <ScalarProperty Name="Terminal_id" ColumnName="Terminal_id" />
+                <ScalarProperty Name="Location" ColumnName="Location" />
+                <ScalarProperty Name="Rules" ColumnName="Rules" />
+                <ScalarProperty Name="Authority_id" ColumnName="Authority_id" />
+                <ScalarProperty Name="Endorsemeent_Date" ColumnName="Endorsemeent_Date" />
+                <ScalarProperty Name="Endorsement_Number" ColumnName="Endorsement_Number" />
+                <ScalarProperty Name="Dl_Number" ColumnName="Dl_Number" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

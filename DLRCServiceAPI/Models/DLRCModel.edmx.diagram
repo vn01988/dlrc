@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="a62ada8b3b164eb9a433f8ffb621afbd" Name="Diagram1">
+        <EntityTypeShape EntityType="DLRCDBModel.Tbl_Dl_Review" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DLRCDBModel.Tbl_Ocr" Width="1.5" PointX="4.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DLRCDBModel.Tbl_RC_Endorsement" Width="1.5" PointX="4.625" PointY="4.75" />
+        <EntityTypeShape EntityType="DLRCDBModel.Tbl_RC_Review" Width="1.5" PointX="7.25" PointY="4.375" />
+        <EntityTypeShape EntityType="DLRCDBModel.Tbl_DL_Endorsement" Width="1.5" PointX="0.75" PointY="1" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
